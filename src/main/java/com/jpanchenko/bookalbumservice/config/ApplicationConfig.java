@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @Configuration
-public class ApplicationConfiguration {
+public class ApplicationConfig {
 
     @Bean
     public RestTemplate restTemplate() {

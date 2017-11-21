@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.CompletableFuture;
 
 import static java.util.stream.Collectors.toList;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
@@ -40,43 +38,18 @@ public class SearchController {
     }
 
     private List<ResponseItem> executeServicesInParallel(String query) {
-        ExecutorService executor = Executors.newWorkStealingPool();
-        List<Callable<List<ResponseItem>>> callables = searchServices.stream()
-                .map(service -> new ServiceCallable(query, service))
+        List<CompletableFuture<List<ResponseItem>>> futures = searchServices.stream()
+                .map(service -> CompletableFuture.supplyAsync(() -> service.search(query))
+                        .exceptionally(ex -> {
+                            log.error("Unexpected error occurred", ex);
+                            return Collections.emptyList();
+                        }))
                 .collect(toList());
 
-        try {
-            return executor.invokeAll(callables)
-                    .stream()
-                    .map(future -> {
-                        try {
-                            return future.get();
-                        } catch (Exception e) {
-                            throw new IllegalStateException(e);
-                        }
-                    })
-                    .flatMap(Collection::stream)
-                    .sorted((o1, o2) -> o1.getTitle().compareTo(o2.getTitle()))
-                    .collect(toList());
-        } catch (Exception e) {
-            log.error("Unexpected error occurred", e);
-        }
-        return Collections.emptyList();
-    }
-
-    private class ServiceCallable implements Callable<List<ResponseItem>> {
-
-        private final String query;
-        private final SearchService service;
-
-        private ServiceCallable(String query, SearchService service) {
-            this.query = query;
-            this.service = service;
-        }
-
-        @Override
-        public List<ResponseItem> call() throws Exception {
-            return service.search(query);
-        }
+        return futures.stream()
+                .map(CompletableFuture::join)
+                .flatMap(Collection::stream)
+                .sorted((o1, o2) -> o1.getTitle().compareTo(o2.getTitle()))
+                .collect(toList());
     }
 }
