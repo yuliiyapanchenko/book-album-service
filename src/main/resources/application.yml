@@ -11,3 +11,6 @@ itunes:
     limit: 5
     attribute: albumTerm
     entity: album
+
+app.response.timeout: 60
+management.security.enabled: false
