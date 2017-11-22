@@ -6,7 +6,7 @@ import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpStatusCodeException;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestOperations;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
@@ -19,7 +19,7 @@ import java.util.Optional;
 public abstract class ApiClient {
 
     @Autowired
-    private RestTemplate restTemplate = new RestTemplate();
+    private RestOperations restTemplate;
 
     public Optional search(String query) {
         Object responseBody = null;
