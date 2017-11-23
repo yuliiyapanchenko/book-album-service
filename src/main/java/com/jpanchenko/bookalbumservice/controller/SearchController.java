@@ -5,6 +5,8 @@ import com.jpanchenko.bookalbumservice.model.response.SearchResponse;
 import com.jpanchenko.bookalbumservice.service.SearchService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,12 +30,18 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 @RestController("/")
 public class SearchController {
 
+    @Getter
+    @Setter
     @Value("${app.response.timeout}")
-    private int TIMEOUT;
+    private int timeout;
     private final ScheduledThreadPoolExecutor delayer = new ScheduledThreadPoolExecutor(10);
 
+    private final List<SearchService> searchServices;
+
     @Autowired
-    List<SearchService> searchServices;
+    public SearchController(List<SearchService> searchServices) {
+        this.searchServices = searchServices;
+    }
 
     @ApiOperation(
             value = "Search for books albums by specified query",
@@ -48,8 +56,8 @@ public class SearchController {
     private List<ResponseItem> executeServicesInParallel(String query) {
         List<CompletableFuture<List<ResponseItem>>> futures = searchServices.stream()
                 .map(
-                        service -> CompletableFuture.supplyAsync(() -> service.search(query))
-                                .applyToEitherAsync(timeoutAfter(TIMEOUT, TimeUnit.SECONDS), responseItems -> responseItems)
+                        service -> service.search(query)
+                                .applyToEitherAsync(timeout(), responseItems -> responseItems)
                                 .exceptionally(ex -> {
                                     log.error("Unexpected error occurred", ex);
                                     return Collections.emptyList();
@@ -64,9 +72,12 @@ public class SearchController {
                 .collect(toList());
     }
 
-    private <T> CompletableFuture<T> timeoutAfter(long timeout, TimeUnit unit) {
+    private <T> CompletableFuture<T> timeout() {
+        int timeout = getTimeout();
+        TimeUnit unit = TimeUnit.SECONDS;
         CompletableFuture<T> result = new CompletableFuture<T>();
-        delayer.schedule(() -> result.completeExceptionally(new TimeoutException("Finished by timeout=" + timeout + unit)), timeout, unit);
+        delayer.schedule(() -> result.completeExceptionally(new TimeoutException("Finished by timeout=" + timeout + unit)),
+                timeout, unit);
         return result;
     }
 }

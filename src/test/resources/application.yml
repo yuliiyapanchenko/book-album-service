@@ -1,16 +1,16 @@
 google:
   endpoint: https://www.google.dummy.com/books/v1/volumes
   queryParams:
-    maxResults: 5
+    maxResults: 2
     orderBy: relevance
     printType: books
 
 itunes:
   endpoint: https://itunes.dummy.apple.com/search
   queryParams:
-    limit: 5
+    limit: 2
     attribute: albumTerm
     entity: album
 
-app.response.timeout: 60
+app.response.timeout: 6
 management.security.enabled: false
