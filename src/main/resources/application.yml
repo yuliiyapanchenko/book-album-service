@@ -1,3 +1,22 @@
+#spring.profile: prod
+#google:
+#  queryParams:
+#    maxResults: 15
+#itunes:
+#  queryParams:
+#    limit: 15
+#
+#---
+#
+#spring.profile: dev
+#google:
+#  queryParams:
+#    maxResults: 10
+#itunes:
+#  queryParams:
+#    limit: 10
+#---
+
 google:
   endpoint: https://www.googleapis.com/books/v1/volumes
   queryParams:
@@ -12,5 +31,5 @@ itunes:
     attribute: albumTerm
     entity: album
 
-app.response.timeout: 60
+app.response.timeout: 3
 management.security.enabled: false

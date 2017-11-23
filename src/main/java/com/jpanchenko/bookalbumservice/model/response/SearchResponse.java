@@ -14,6 +14,6 @@ import java.util.List;
 public final class SearchResponse {
 
     @Size(max = 10)
-    @ApiModelProperty("List of books and albums which are specify serch query.")
+    @ApiModelProperty("List of books and albums which are specify to search query.")
     private List<ResponseItem> items;
 }
