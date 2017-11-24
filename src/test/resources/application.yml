@@ -8,7 +8,7 @@ google:
 itunes:
   endpoint: https://itunes.dummy.apple.com/search
   queryParams:
-    limit: 2
+    limit: 3
     attribute: albumTerm
     entity: album
 

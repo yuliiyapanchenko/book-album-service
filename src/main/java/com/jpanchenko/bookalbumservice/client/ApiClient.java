@@ -1,8 +1,14 @@
 package com.jpanchenko.bookalbumservice.client;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpStatusCodeException;
@@ -17,6 +23,14 @@ import java.util.Optional;
 
 @Slf4j
 public abstract class ApiClient {
+
+    @Getter
+    @Setter
+    private String endpoint;
+
+    @Getter
+    @Setter
+    private Map<String, String> queryParams;
 
     @Autowired
     private RestOperations restTemplate;
@@ -40,7 +54,7 @@ public abstract class ApiClient {
         return restTemplate.exchange(uri, HttpMethod.GET, entity, getResponseType());
     }
 
-    private URI getUri(String query) {
+    URI getUri(String query) {
         MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
         queryParams.putAll(queryParams(query));
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(getEndpoint()).queryParams(queryParams);
@@ -54,18 +68,14 @@ public abstract class ApiClient {
         return uriParams;
     }
 
-    private HttpHeaders createHeaders() {
+    HttpHeaders createHeaders() {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
         return headers;
     }
 
-    protected abstract Map<String, String> getQueryParams();
-
     protected abstract String queryParam();
-
-    protected abstract String getEndpoint();
 
     protected abstract Class getResponseType();
 
