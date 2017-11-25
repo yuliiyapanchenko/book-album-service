@@ -1,0 +1,7 @@
+google:
+  queryParams:
+    maxResults: 5
+
+itunes:
+  queryParams:
+    limit: 5

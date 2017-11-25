@@ -1,0 +1,381 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 828,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "toJL3PdKMP0C",
+      "etag": "++H7JxAAVdY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/toJL3PdKMP0C",
+      "volumeInfo": {
+        "title": "On Love",
+        "subtitle": "In the Muslim Tradition",
+        "authors": [
+          "Rusmir Mahmutćehajić"
+        ],
+        "publisher": "Fordham Univ Press",
+        "publishedDate": "2007",
+        "description": "This rare and important contribution to the field of Islamic studies, philosophy, and comparative religion achieves a twofold objective. First, it draws from a broad and authoritative well of sources, especially in the domain of Sufism, or Islamic mysticism. The scholarship is impeccable. Second, it is an in-depth meditation on the relationship between love and knowledge, multiplicity and unity, the example of the Prophet Muhammed viewed as Universal Man, spiritual union, heart and intellect, and other related themes--conveyed in fresh, contemporary language.The book is as much a work of Sufism as it is a book about Sufism. Many of these themes have a universal appeal for students of mysticism; consequently, there are distinct resonances with other traditions, especially within certain schools of Christian mysticism dominated by the language of love.In our day, when the divisions between many Muslims and many Christians have broadened into chasms of suspicion and fear, books such as this one are especially important for the help they can offer in bridging these rifts. The capacity of scholars to understand these two religions, which stem from the same Abrahamic source, is of the utmost significance, and the best approach to better understanding may be through the mystical traditions, which tend to reflect more tolerance and to recognize a potential for seeing unity in a multiplicity of perspectives. This work conveys the beauty at the heart of the Islamic tradition in a language devoid of technical terminology.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780823227518"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0823227510"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 169,
+        "printType": "BOOK",
+        "categories": [
+          "Philosophy"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=toJL3PdKMP0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=toJL3PdKMP0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.nl/books?id=toJL3PdKMP0C&printsec=frontcover&dq=love&hl=&as_pt=BOOKS&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.nl/books?id=toJL3PdKMP0C&dq=love&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/On_Love.html?hl=&id=toJL3PdKMP0C"
+      },
+      "saleInfo": {
+        "country": "NL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "NL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.nl/books/download/On_Love-sample-pdf.acsm?id=toJL3PdKMP0C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=toJL3PdKMP0C&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This work conveys the beauty at the heart of the Islamic tradition in a language devoid of technical terminology."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "P3wOCwAAQBAJ",
+      "etag": "Hfr5MN8owpQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/P3wOCwAAQBAJ",
+      "volumeInfo": {
+        "title": "On Love",
+        "subtitle": "A Novel",
+        "authors": [
+          "Alain de Botton"
+        ],
+        "publisher": "Grove/Atlantic, Inc.",
+        "publishedDate": "2015-11-03",
+        "description": "On Love is globally bestselling novelist-philosopher Alain De Botton’s iconic debut—the novel that launched his decorated literary career; and a funny, profound, and searingly true-to-life exploration of love. A man and a woman meet over casual conversation on a flight from Paris to London, and so begins a love story—from fist kiss to first argument, elation to heartbreak, and everything in between. Each stage of the relationship is illuminated with starling clarity, as de Botton explores emotions often felt but rarely understood. Now, in tandem with the arrival of The Course of Love—de Botton’s first novel in twenty years and one about mature love—we celebrate the timeless debut about young love that serves as The Course of Love’s precursor and companion. Reissued with a brilliant introduction by the New York Times bestselling author of How Should a Person Be?, Shelia Heti, On Love is a contemporary classic that should be read by anyone who has ever fallen in love.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780802189967"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0802189962"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 240,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.5.5.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=P3wOCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=P3wOCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.nl/books?id=P3wOCwAAQBAJ&pg=PP1&dq=love&hl=&as_pt=BOOKS&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=P3wOCwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://market.android.com/details?id=book-P3wOCwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "NL",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 14.51,
+          "currencyCode": "EUR"
+        },
+        "retailPrice": {
+          "amount": 9.87,
+          "currencyCode": "EUR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=P3wOCwAAQBAJ&rdid=book-P3wOCwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1.451E7,
+              "currencyCode": "EUR"
+            },
+            "retailPrice": {
+              "amountInMicros": 9870000.0,
+              "currencyCode": "EUR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "NL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.nl/books/download/On_Love-sample-epub.acsm?id=P3wOCwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.nl/books/download/On_Love-sample-pdf.acsm?id=P3wOCwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=P3wOCwAAQBAJ&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "On Love is globally bestselling novelist-philosopher Alain De Botton’s iconic debut—the novel that launched his decorated literary career; and a funny, profound, and searingly true-to-life exploration of love."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "-LBxNzeA2eEC",
+      "etag": "x7bfiIXf04k",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/-LBxNzeA2eEC",
+      "volumeInfo": {
+        "title": "Food and Love",
+        "subtitle": "A Cultural History of East and West",
+        "authors": [
+          "Jack Goody"
+        ],
+        "publisher": "Verso",
+        "publishedDate": "1998",
+        "description": "Describes the evolution of cuisines from both the East and West, their influence on the rest of the world, and taboos associated with certain foods and drinks.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "185984829X"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781859848296"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 305,
+        "printType": "BOOK",
+        "categories": [
+          "Social Science"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.0.1.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=-LBxNzeA2eEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=-LBxNzeA2eEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.nl/books?id=-LBxNzeA2eEC&printsec=frontcover&dq=love&hl=&as_pt=BOOKS&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.nl/books?id=-LBxNzeA2eEC&dq=love&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Food_and_Love.html?hl=&id=-LBxNzeA2eEC"
+      },
+      "saleInfo": {
+        "country": "NL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "NL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=-LBxNzeA2eEC&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Describes the evolution of cuisines from both the East and West, their influence on the rest of the world, and taboos associated with certain foods and drinks."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "1o-4I7beKcIC",
+      "etag": "03CFOZmszvo",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1o-4I7beKcIC",
+      "volumeInfo": {
+        "title": "Love",
+        "subtitle": "A New Look at an Old Word",
+        "authors": [
+          "Don Baker"
+        ],
+        "publisher": "Harvest House Pub",
+        "publishedDate": "1988",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0890816425"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780890816424"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 141,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=1o-4I7beKcIC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=1o-4I7beKcIC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.nl/books?id=1o-4I7beKcIC&q=love&dq=love&hl=&as_pt=BOOKS&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.nl/books?id=1o-4I7beKcIC&dq=love&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Love.html?hl=&id=1o-4I7beKcIC"
+      },
+      "saleInfo": {
+        "country": "NL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "NL",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=1o-4I7beKcIC&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "Lqy8oY1eTr0C",
+      "etag": "VhQhOJ8FDYU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/Lqy8oY1eTr0C",
+      "volumeInfo": {
+        "title": "On Love",
+        "subtitle": "A Selection of Works of Hugh, Adam, Achard, Richard, and Godfrey of St. Victor",
+        "authors": [
+          "Hugh Feiss"
+        ],
+        "publisher": "New City Press",
+        "publishedDate": "2012",
+        "description": "The version of the Rule of St. Augustine used at the Abbey of St.Victor began with the command to love God above all things and ones neighbor as oneself. Not surprisingly, then, love was a pervasive theme in the writings produced there, many of which are introduced and translated here: (1)five lyrical essays by Hugh of St.Victor (d.1141): The Praise of Charity; The Betrothal Gift of the Soul; In Praise of the Spouse; On the Substance of Love; What Truly Should Be Loved?; (2)On the Four Degrees of Violent Love, by Richard of St.Victor (d.1173), which traces the likenesses and differences between romantic love and the love of God; (3)Achard of St.Victor (d.1170), Sermon5 and two of Adam of St.Victors sequences are examples of how these authors wove love into their writings; (4)excerpts from the Microcosmus by Godfrey of St.Victor (d.ca.1195), summarize the central place of love in his humanistic theological anthropology.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781565484344"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1565484347"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 391,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.0.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=Lqy8oY1eTr0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=Lqy8oY1eTr0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.nl/books?id=Lqy8oY1eTr0C&printsec=frontcover&dq=love&hl=&as_pt=BOOKS&cd=5&source=gbs_api",
+        "infoLink": "http://books.google.nl/books?id=Lqy8oY1eTr0C&dq=love&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/On_Love.html?hl=&id=Lqy8oY1eTr0C"
+      },
+      "saleInfo": {
+        "country": "NL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "NL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=Lqy8oY1eTr0C&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "The version of the Rule of St. Augustine used at the Abbey of St.Victor began with the command to love God above all things and ones neighbor as oneself."
+      }
+    }
+  ]
+}

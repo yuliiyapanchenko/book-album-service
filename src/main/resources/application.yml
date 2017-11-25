@@ -1,0 +1,16 @@
+google:
+  endpoint: https://www.googleapis.com/books/v1/volumes
+  queryParams:
+    maxResults: 5
+    orderBy: relevance
+    printType: books
+
+itunes:
+  endpoint: https://itunes.apple.com/search
+  queryParams:
+    limit: 5
+    attribute: albumTerm
+    entity: album
+
+app.response.timeout: 60
+management.security.enabled: false
