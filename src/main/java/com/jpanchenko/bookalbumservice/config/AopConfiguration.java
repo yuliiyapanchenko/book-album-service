@@ -18,10 +18,11 @@ public class AopConfiguration {
 
     @Pointcut("execution(public * org.springframework.web.client.RestOperations.*(..))")
     public void monitor() {
+        // pointcut method should be empty
     }
 
     @Bean
-    public ResponseTimeInterceptor performanceMonitorInterceptor() {
+    public ResponseTimeInterceptor responseTimeInterceptor() {
         return new ResponseTimeInterceptor();
     }
 
@@ -29,6 +30,6 @@ public class AopConfiguration {
     public Advisor performanceMonitorAdvisor() {
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
         pointcut.setExpression("com.jpanchenko.bookalbumservice.config.AopConfiguration.monitor()");
-        return new DefaultPointcutAdvisor(pointcut, performanceMonitorInterceptor());
+        return new DefaultPointcutAdvisor(pointcut, responseTimeInterceptor());
     }
 }

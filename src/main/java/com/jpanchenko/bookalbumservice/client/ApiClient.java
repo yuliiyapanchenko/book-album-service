@@ -11,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -36,15 +35,7 @@ public abstract class ApiClient {
     private RestOperations restTemplate;
 
     public Optional search(String query) {
-        Object responseBody = null;
-        try {
-            responseBody = buildAndExecuteRequest(query).getBody();
-        } catch (HttpStatusCodeException error) {
-            log.error("Request failed with error: " + error.getStatusCode() + " , " + error.getResponseBodyAsString());
-        } catch (Exception e) {
-            log.error("Unexpected error occurred", e);
-        }
-
+        Object responseBody = buildAndExecuteRequest(query).getBody();
         return Optional.ofNullable(responseBody);
     }
 

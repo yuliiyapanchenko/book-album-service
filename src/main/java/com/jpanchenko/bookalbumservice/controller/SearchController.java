@@ -1,7 +1,7 @@
 package com.jpanchenko.bookalbumservice.controller;
 
-import com.jpanchenko.bookalbumservice.model.response.ResponseItem;
-import com.jpanchenko.bookalbumservice.model.response.SearchResponse;
+import com.jpanchenko.bookalbumservice.model.response.search.ResponseItem;
+import com.jpanchenko.bookalbumservice.model.response.search.SearchResponse;
 import com.jpanchenko.bookalbumservice.service.SearchService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -75,7 +75,7 @@ public class SearchController {
     private <T> CompletableFuture<T> timeout() {
         int timeout = getTimeout();
         TimeUnit unit = TimeUnit.SECONDS;
-        CompletableFuture<T> result = new CompletableFuture<T>();
+        CompletableFuture<T> result = new CompletableFuture<>();
         delayer.schedule(() -> result.completeExceptionally(new TimeoutException("Finished by timeout=" + timeout + unit)),
                 timeout, unit);
         return result;

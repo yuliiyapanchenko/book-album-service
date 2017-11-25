@@ -6,6 +6,6 @@ import java.util.Collections;
 import java.util.List;
 
 @Data
-public class SearchResults {
+public class GoogleSearchResults {
     private List<Item> items = Collections.emptyList();
 }

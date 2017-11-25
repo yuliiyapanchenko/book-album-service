@@ -2,8 +2,8 @@ package com.jpanchenko.bookalbumservice.controller;
 
 import com.jpanchenko.bookalbumservice.client.ApiClient;
 import com.jpanchenko.bookalbumservice.mapper.ResponseMapper;
-import com.jpanchenko.bookalbumservice.model.response.ResponseItem;
-import com.jpanchenko.bookalbumservice.model.response.SearchResponse;
+import com.jpanchenko.bookalbumservice.model.response.search.ResponseItem;
+import com.jpanchenko.bookalbumservice.model.response.search.SearchResponse;
 import com.jpanchenko.bookalbumservice.service.SearchService;
 import org.junit.Before;
 import org.junit.Test;
@@ -75,7 +75,7 @@ public class SearchControllerTest {
     }
 
     @Test
-    public void shouldFinishTimeout() throws Exception {
+    public void shouldFinishByTimeout() throws Exception {
         searchController = new SearchController(Collections.singletonList(new SearchServiceMock()));
         searchController.setTimeout(1);
 

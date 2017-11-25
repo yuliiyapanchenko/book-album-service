@@ -1,7 +1,7 @@
 package com.jpanchenko.bookalbumservice.client;
 
 import com.jpanchenko.bookalbumservice.client.google.GoogleClient;
-import com.jpanchenko.bookalbumservice.model.response.google.SearchResults;
+import com.jpanchenko.bookalbumservice.model.response.google.GoogleSearchResults;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +14,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestOperations;
 
 import java.net.URI;
@@ -23,13 +22,11 @@ import java.util.Optional;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
 import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON;
 
@@ -51,7 +48,7 @@ public class ApiClientTest {
     ResponseEntity responseEntity;
 
     @Mock
-    SearchResults results;
+    GoogleSearchResults results;
 
     private HttpEntity<String> entity;
     private URI uri;
@@ -65,13 +62,13 @@ public class ApiClientTest {
 
         entity = new HttpEntity<>(apiClient.createHeaders());
         uri = apiClient.getUri(QUERY);
-        when(restOperations.exchange(uri, HttpMethod.GET, entity, SearchResults.class)).thenReturn(responseEntity);
+        when(restOperations.exchange(uri, HttpMethod.GET, entity, GoogleSearchResults.class)).thenReturn(responseEntity);
     }
 
     @Test
     public void shouldCallRestApi() {
         apiClient.search("test");
-        verify(restOperations, times(1)).exchange(uri, HttpMethod.GET, entity, SearchResults.class);
+        verify(restOperations, times(1)).exchange(uri, HttpMethod.GET, entity, GoogleSearchResults.class);
     }
 
     @Test
@@ -80,24 +77,6 @@ public class ApiClientTest {
 
         assertTrue(actual.isPresent());
         assertThat(actual.get(), equalTo(results));
-    }
-
-    @Test
-    public void shouldReturnEmptyResultsWhenHttpStatusCodeException() {
-        when(restOperations.exchange(uri, HttpMethod.GET, entity, SearchResults.class)).thenThrow(new HttpServerErrorException(NOT_FOUND));
-
-        Optional actual = apiClient.search(QUERY);
-
-        assertFalse(actual.isPresent());
-    }
-
-    @Test
-    public void shouldReturnEmptyResultsWhenUnexpectedException() {
-        when(restOperations.exchange(uri, HttpMethod.GET, entity, SearchResults.class)).thenThrow(new NullPointerException());
-
-        Optional actual = apiClient.search(QUERY);
-
-        assertFalse(actual.isPresent());
     }
 
     @Test

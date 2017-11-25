@@ -1,10 +1,10 @@
 package com.jpanchenko.bookalbumservice.mapper.itunes;
 
 import com.jpanchenko.bookalbumservice.mapper.ResponseMapper;
-import com.jpanchenko.bookalbumservice.model.response.ItemType;
-import com.jpanchenko.bookalbumservice.model.response.ResponseItem;
+import com.jpanchenko.bookalbumservice.model.response.itunes.ITunesSearchResults;
 import com.jpanchenko.bookalbumservice.model.response.itunes.Result;
-import com.jpanchenko.bookalbumservice.model.response.itunes.SearchResults;
+import com.jpanchenko.bookalbumservice.model.response.search.ItemType;
+import com.jpanchenko.bookalbumservice.model.response.search.ResponseItem;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -19,17 +19,10 @@ public class ITunesResponseMapper implements ResponseMapper {
 
     @Override
     public List<ResponseItem> map(Object apiResults) {
-        try {
-            SearchResults results = (SearchResults) apiResults;
-            return results.getResults().stream()
-                    .map(this::mapResult)
-                    .collect(toList());
-        } catch (ClassCastException e) {
-            log.error("Wrong type of results", e);
-        } catch (Exception e) {
-            log.error("Unexpected error occurred", e);
-        }
-        return Collections.emptyList();
+        ITunesSearchResults results = (ITunesSearchResults) apiResults;
+        return results.getResults().stream()
+                .map(this::mapResult)
+                .collect(toList());
     }
 
     private ResponseItem mapResult(Result result) {

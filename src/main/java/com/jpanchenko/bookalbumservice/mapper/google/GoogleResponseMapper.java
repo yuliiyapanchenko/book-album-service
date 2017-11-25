@@ -1,15 +1,14 @@
 package com.jpanchenko.bookalbumservice.mapper.google;
 
 import com.jpanchenko.bookalbumservice.mapper.ResponseMapper;
-import com.jpanchenko.bookalbumservice.model.response.ItemType;
-import com.jpanchenko.bookalbumservice.model.response.ResponseItem;
+import com.jpanchenko.bookalbumservice.model.response.google.GoogleSearchResults;
 import com.jpanchenko.bookalbumservice.model.response.google.Item;
-import com.jpanchenko.bookalbumservice.model.response.google.SearchResults;
 import com.jpanchenko.bookalbumservice.model.response.google.VolumeInfo;
+import com.jpanchenko.bookalbumservice.model.response.search.ItemType;
+import com.jpanchenko.bookalbumservice.model.response.search.ResponseItem;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,18 +18,10 @@ public class GoogleResponseMapper implements ResponseMapper {
 
     @Override
     public List<ResponseItem> map(Object apiResults) {
-        try {
-            SearchResults results = (SearchResults) apiResults;
-            return results.getItems().stream()
-                    .map(this::mapResult)
-                    .collect(Collectors.toList());
-        } catch (ClassCastException e) {
-            log.error("Wrong type of results", e);
-        } catch (Exception e) {
-            log.error("Unexpected error occurred", e);
-        }
-
-        return Collections.emptyList();
+        GoogleSearchResults results = (GoogleSearchResults) apiResults;
+        return results.getItems().stream()
+                .map(this::mapResult)
+                .collect(Collectors.toList());
     }
 
     private ResponseItem mapResult(Item item) {

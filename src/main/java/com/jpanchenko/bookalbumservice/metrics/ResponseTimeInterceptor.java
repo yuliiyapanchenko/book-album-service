@@ -1,6 +1,6 @@
 package com.jpanchenko.bookalbumservice.metrics;
 
-import lombok.Data;
+import com.jpanchenko.bookalbumservice.model.response.metrics.HostMetrics;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.stereotype.Component;
@@ -9,22 +9,25 @@ import org.springframework.web.client.RestOperations;
 
 import java.net.URI;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 public class ResponseTimeInterceptor implements MethodInterceptor {
 
-    private static ConcurrentHashMap<String, HostMetrics> metricsByHost = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, HostMetrics> metricsByHost = new ConcurrentHashMap<>();
 
     public Map<String, HostMetrics> getMetrics() {
         return metricsByHost;
     }
 
     public Object invoke(MethodInvocation method) throws Throwable {
-        if (method.getMethod().getDeclaringClass() != RestOperations.class
+        if (Objects.isNull(method.getMethod())
+                || method.getMethod().getDeclaringClass() != RestOperations.class
+                || Objects.isNull(method.getArguments())
                 || method.getArguments().length == 0
                 || !(method.getArguments()[0] instanceof URI)) {
-            return null;
+            return method.proceed();
         }
 
         String host = ((URI) method.getArguments()[0]).getHost();
@@ -47,34 +50,18 @@ public class ResponseTimeInterceptor implements MethodInterceptor {
             metricsByHost.put(host, hostMetrics);
         }
 
-        hostMetrics.count++;
-        hostMetrics.lastTime = elapsedTime;
-        hostMetrics.totalTime += elapsedTime;
-        if (elapsedTime > hostMetrics.maxTime || hostMetrics.maxTime == 0) {
-            hostMetrics.maxTime = elapsedTime;
+        long count = hostMetrics.getCount();
+        hostMetrics.setCount(count + 1);
+        hostMetrics.setLastTime(elapsedTime);
+        long totalTime = hostMetrics.getTotalTime();
+        hostMetrics.setTotalTime(totalTime + elapsedTime);
+        if (elapsedTime > hostMetrics.getMaxTime() || hostMetrics.getMaxTime() == 0) {
+            hostMetrics.setMaxTime(elapsedTime);
         }
 
-        if (elapsedTime < hostMetrics.minTime || hostMetrics.minTime == 0) {
-            hostMetrics.minTime = elapsedTime;
-        }
-    }
-
-    @Data
-    private class HostMetrics {
-        private String host;
-        private long count;
-        private long totalTime;
-        private long maxTime;
-        private long minTime;
-        private long avgTime;
-        private long lastTime;
-
-        public HostMetrics(String host) {
-            this.host = host;
-        }
-
-        public long getAvgTime() {
-            return totalTime / count;
+        if (elapsedTime < hostMetrics.getMinTime() || hostMetrics.getMinTime() == 0) {
+            hostMetrics.setMinTime(elapsedTime);
         }
     }
+
 }

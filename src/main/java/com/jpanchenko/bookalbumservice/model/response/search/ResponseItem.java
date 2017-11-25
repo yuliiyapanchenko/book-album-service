@@ -1,4 +1,4 @@
-package com.jpanchenko.bookalbumservice.model.response;
+package com.jpanchenko.bookalbumservice.model.response.search;
 
 import lombok.Builder;
 import lombok.Data;

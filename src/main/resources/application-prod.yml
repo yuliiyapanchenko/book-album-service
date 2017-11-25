@@ -1,7 +1,7 @@
 google:
   queryParams:
-    maxResults: 15
+    maxResults: 5
 
 itunes:
   queryParams:
-    limit: 20
+    limit: 5

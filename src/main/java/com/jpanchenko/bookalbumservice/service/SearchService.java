@@ -2,7 +2,7 @@ package com.jpanchenko.bookalbumservice.service;
 
 import com.jpanchenko.bookalbumservice.client.ApiClient;
 import com.jpanchenko.bookalbumservice.mapper.ResponseMapper;
-import com.jpanchenko.bookalbumservice.model.response.ResponseItem;
+import com.jpanchenko.bookalbumservice.model.response.search.ResponseItem;
 
 import java.util.Collections;
 import java.util.List;

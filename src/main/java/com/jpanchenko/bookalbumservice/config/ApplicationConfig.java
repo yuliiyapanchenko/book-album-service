@@ -13,15 +13,22 @@ import java.util.List;
 @Configuration
 public class ApplicationConfig {
 
+    static final MediaType JS_MEDIA_TYPE = new MediaType("text", "javascript", MappingJackson2HttpMessageConverter.DEFAULT_CHARSET);
+
     @Bean
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
         List<HttpMessageConverter<?>> converters = restTemplate.getMessageConverters();
-        converters.stream().filter(converter -> converter instanceof MappingJackson2HttpMessageConverter).forEach(converter -> {
-            MappingJackson2HttpMessageConverter jsonConverter = (MappingJackson2HttpMessageConverter) converter;
-            jsonConverter.setSupportedMediaTypes(ImmutableList.of(MediaType.APPLICATION_JSON_UTF8,
-                    new MediaType("text", "javascript", MappingJackson2HttpMessageConverter.DEFAULT_CHARSET)));
-        });
+        converters.stream()
+                .filter(converter -> converter instanceof MappingJackson2HttpMessageConverter)
+                .forEach(converter -> addJsType((MappingJackson2HttpMessageConverter) converter));
         return restTemplate;
+    }
+
+    private void addJsType(MappingJackson2HttpMessageConverter converter) {
+        converter.setSupportedMediaTypes(ImmutableList.of(
+                MediaType.APPLICATION_JSON_UTF8,
+                JS_MEDIA_TYPE)
+        );
     }
 }

@@ -1,6 +1,6 @@
 package com.jpanchenko.bookalbumservice.mapper;
 
-import com.jpanchenko.bookalbumservice.model.response.ResponseItem;
+import com.jpanchenko.bookalbumservice.model.response.search.ResponseItem;
 
 import java.util.List;
 

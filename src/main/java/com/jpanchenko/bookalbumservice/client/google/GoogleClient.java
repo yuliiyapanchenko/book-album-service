@@ -1,7 +1,7 @@
 package com.jpanchenko.bookalbumservice.client.google;
 
 import com.jpanchenko.bookalbumservice.client.ApiClient;
-import com.jpanchenko.bookalbumservice.model.response.google.SearchResults;
+import com.jpanchenko.bookalbumservice.model.response.google.GoogleSearchResults;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ public class GoogleClient extends ApiClient {
 
     @Override
     protected Class getResponseType() {
-        return SearchResults.class;
+        return GoogleSearchResults.class;
     }
 
     @Override
